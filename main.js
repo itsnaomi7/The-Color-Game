@@ -64,9 +64,7 @@ hardBtn.addEventListener("click", function(){
 resetButton.addEventListener("click", function(){
   //generate all new colors
   colors = generateRandomColors(numSquares);
-  //pick a new random color from the array
   pickedColor = pickColor();
-  //change colorDisplay to match picked color
   rgbCode.textContent = pickedColor;
   this.textContent = "New Color";
   messageDisplay.textContent = "";
@@ -74,7 +72,7 @@ resetButton.addEventListener("click", function(){
   for (var i = 0; i < square.length; i++) {
     square[i].style.background = colors[i];
   }
-  h1.style.background = "steelblue";
+  h1.style.background = "";
 })
 
 rgbCode.textContent = pickedColor;
@@ -84,9 +82,7 @@ for(var i = 0; i < square.length; i++) {
   square[i].style.background = colors[i];
   //add click listeners to squares
   square[i].addEventListener("click", function() {
-    //grab color of picked square
     var clickedColor = this.style.background;
-    //compare color to pickedColor
     if (clickedColor === pickedColor) {
       messageDisplay.textContent = "Good Job!";
       resetButton.textContent = "Play Again ?";
@@ -100,9 +96,8 @@ for(var i = 0; i < square.length; i++) {
 }
 
 function changeColors(color){
-  //loop through all squares
+  // loop through all squares ?
 for (var i = 0; i < square.length; i++) {
-    //change each color to match given color
     square[i].style.background = color;
 }
 
@@ -121,7 +116,6 @@ function generateRandomColors(num){
     arr.push(randomColor())
     //get random color and push into array
   }
-  //return that array
   return arr;
 }
 
